@@ -3,16 +3,23 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
-GET     /fixtures                   controllers.Application.fixtures()
-GET     /leagueTable                controllers.Application.leagueTable()
-GET     /squad                      controllers.Application.squad(position: Long=0)
-GET     /squad/:position            controllers.Application.squad(position: Long)
-GET     /login                      controllers.Application.login()
-GET     /register                   controllers.Application.register()
+GET         /                       controllers.Application.index()
+GET         /fixtures               controllers.Application.fixtures()
+GET         /leagueTable            controllers.Application.leagueTable()
+GET         /squad                  controllers.Application.squad(position: Long=0)
+GET         /squad/:position        controllers.Application.squad(position: Long)
+GET         /login                  controllers.Application.login()
+GET         /register               controllers.Application.register()
+
+
+
+# Login form
+GET         /login                  controllers.LoginCtrl.login()
+POST        /login                  controllers.LoginCtrl.authenticate()
+GET         /logout                 controllers.LoginCtrl.logout()
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file           controllers.Assets.at(path="/public", file)
 
     
