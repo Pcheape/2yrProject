@@ -2,12 +2,15 @@ package controllers;
 import java.util.*;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.data.*;
+import play.data.Form.*;
+
+
 import play.*;
 
 
 import views.html.*;
 import models.*;
-
  public class Application extends Controller {
 
       public Result index() {
@@ -50,7 +53,15 @@ List<Fixtures> fixture = Fixtures.findAll();
     }
     
     public Result register() {
+        
+            final static Form<User> registerForm = Form.form(User.class);
 
-        return ok(register.render());
+        return ok(register.render(registerForm));
     }
+       public Result registerFormSubmit() {
+
+         return ok("user registered");
+     }
+
+
 }
