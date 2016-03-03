@@ -54,7 +54,7 @@ List<Fixtures> fixture = Fixtures.findAll();
     
     public Result register() {
         
-            final static Form<User> registerForm = Form.form(User.class);
+            Form<User> registerForm = Form.form(User.class);
 
         return ok(register.render(registerForm));
     }
