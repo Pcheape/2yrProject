@@ -63,4 +63,6 @@ import com.avaje.ebean.Model;
     public int getTeamScore() {
         return teamScore;
     }
+    
+    
 }
